@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem do Dia</title>
+    <style>
+        /* Reset global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000d1b; /* Azul escuro */
+            font-family: 'Arial', sans-serif;
+            color: white;
+            padding: 10px;
+        }
+
+        .container {
+            background-color: #0d1b2a;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background-color: #1e90ff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0078d7;
+        }
+
+        /* Rodapé */
+        .footer {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function exibirMensagem() {
+            const agora = new Date();  // Pega o horário atual
+            const hora = agora.getHours();  // Pega a hora (0 a 23)
+            let mensagem = '';
+
+            // Verifica o intervalo de horário e define a mensagem
+            if (hora >= 6 && hora < 12) {
+                mensagem = 'Bom dia! Aproveite sua manhã!';
+            } else if (hora >= 12 && hora < 18) {
+                mensagem = 'Boa tarde! Tenha uma tarde produtiva!';
+            } else {
+                mensagem = 'Boa noite! Descanse bem!';
+            }
+
+            // Exibe a mensagem na página
+            document.getElementById('mensagem').textContent = mensagem;
+        }
+
+        // Chama a função assim que a página carrega
+        window.onload = exibirMensagem;
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+    // Recupera o nome do Local Storage
+    const nome = localStorage.getItem("nome");
+
+    // Atualiza a mensagem na página
+    const welcomeMessage = document.getElementById("welcome-message");
+
+    if (nome) {
+        welcomeMessage.textContent = `Bem-vindo, ${nome}!`;
+    } else {
+        welcomeMessage.textContent = "Bem-vindo!";
+    }
+});
+
+
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="mensagem"><p id="welcome-message"></p></h1> <!-- A mensagem será exibida aqui -->
+      </div>
+</body>
+</html>

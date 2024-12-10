@@ -1,0 +1,100 @@
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000d1b; /* Azul escuro */
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+/* Container principal */
+.container {
+    background-color: #0d1b2a;
+    width: 90%; /* Ajusta para telas pequenas */
+    max-width: 400px; /* Limita o tamanho em telas maiores */
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+/* Título */
+.container h1 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Inputs */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1b263b;
+    color: white;
+    font-size: 16px;
+}
+
+.form-group input::placeholder {
+    color: #7a859c;
+}
+
+/* Botão */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #1e90ff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0078d7;
+}
+
+/* Rodapé */
+.footer {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile-first */
+body {
+    padding: 10px;
+}
+
